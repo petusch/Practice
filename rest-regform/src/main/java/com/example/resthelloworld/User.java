@@ -9,11 +9,12 @@ public class User {
     private UUID id; // id requires hashing
     private Date UserCreation;
     private Date BirthDate;
+    private String Email;
 
-
-    public User(String name, String surname, long birthdate) {
+    public User(String name, String surname, String email, long birthdate) {
         this.Name = name;
         this.Surname = surname;
+        this.Email = email;
         this.BirthDate = new Date(birthdate);
         this.id = UUID.randomUUID();
         this.UserCreation = new Date();
@@ -49,5 +50,13 @@ public class User {
 
     public Date getUserCreation() {
         return UserCreation;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 }

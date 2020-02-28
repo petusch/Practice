@@ -6,17 +6,19 @@ import java.util.UUID;
 public class User {
     private String Name;
     private String Surname;
-    private UUID id; // id requires hashing
+    private long id; // id requires hashing
     private Date UserCreation;
     private Date BirthDate;
     private String Email;
+
+    public User(){}
 
     public User(String name, String surname, String email, long birthdate) {
         this.Name = name;
         this.Surname = surname;
         this.Email = email;
         this.BirthDate = new Date(birthdate);
-        this.id = UUID.randomUUID();
+        setId();
         this.UserCreation = new Date();
     }
 
@@ -25,7 +27,7 @@ public class User {
     }
 
     public void setName(String name) {
-        Name = name;
+        this.Name = name;
     }
 
     public String getSurname() {
@@ -33,10 +35,13 @@ public class User {
     }
 
     public void setSurname(String surname) {
-        Surname = surname;
+        this.Surname = surname;
     }
 
-    public UUID getId() {
+    private void setId() {
+        this.id = 1;
+    }
+    public long getId() {
         return id;
     }
 
@@ -45,7 +50,7 @@ public class User {
     }
 
     public void setBirthDate(Date birthDate) {
-        BirthDate = birthDate;
+        this.BirthDate = birthDate;
     }
 
     public Date getUserCreation() {
@@ -57,6 +62,7 @@ public class User {
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.Email = email;
     }
+
 }

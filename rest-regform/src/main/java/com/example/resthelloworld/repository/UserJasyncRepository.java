@@ -2,12 +2,13 @@ package com.example.resthelloworld.repository;
 
 import com.example.resthelloworld.entity.User;
 import com.github.jasync.sql.db.Connection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class UserJasyncRepository implements UserRepository{
 
-
+    @Autowired
     Connection connection;
 
     public UserJasyncRepository(Connection connection) {

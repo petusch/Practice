@@ -1,10 +1,11 @@
 package com.example.resthelloworld.entity;
 
 import lombok.Generated;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 
-
-
+import java.time.ZoneId;
 import java.util.Date;
 
 public class User {
@@ -29,12 +30,23 @@ public class User {
         this.UserCreation = new Date();
     }
 
+
     public User(String name, String surname, String email) {
         this.Name = name;
         this.Surname = surname;
         this.Email = email;
         this.UserCreation = new Date();
     }
+
+
+    public User(String name, String surname, String email, LocalDateTime birthdate, LocalDateTime creationdate) {
+        this.Name = name;
+        this.Surname = surname;
+        this.Email = email;
+        this.UserCreation = creationdate.plusDays(1).toDate();
+        this.BirthDate = birthdate.plusDays(1).toDate();
+    }
+
 
     public String getName() {
         return Name;
@@ -74,6 +86,11 @@ public class User {
 
     public void setEmail(String email) {
         this.Email = email;
+    }
+
+    public String toString()
+    {
+        return "["+ Name + " | " + Surname + " | " + Email +"]" ;
     }
 
 }

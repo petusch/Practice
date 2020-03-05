@@ -20,6 +20,8 @@ public class UserCreator {
 
     @Autowired
     UserService userServices;
+    @Autowired
+    Connection connection;
 
     @RequestMapping(value ={"/test", "/create"},method = RequestMethod.POST)
     public ResponseEntity<User> user(@RequestBody User user) throws ExecutionException, InterruptedException {
@@ -39,9 +41,6 @@ public class UserCreator {
 //        //Create User in database
 //        System.out.println(user.getEmail());
 
-        Connection connection = PostgreSQLConnectionBuilder.createConnectionPool(
-                "jdbc:postgresql://localhost:5432/RegForm");
-        //System.out.println(user.getBirthDate());
 
         CompletableFuture<QueryResult> future = connection.sendPreparedStatement("INSERT INTO public.users(\n" +
                 "\t name, surname, birthdate, creationDate, eMail)\n" +

@@ -1,7 +1,7 @@
 package com.example.resthelloworld.config;
 
-import com.example.resthelloworld.repository.UserJasyncRepository;
-import com.example.resthelloworld.repository.UserRepository;
+import com.example.resthelloworld.entity.Event;
+import com.example.resthelloworld.repository.EventRepository;
 import com.github.jasync.sql.db.Connection;
 import com.github.jasync.sql.db.postgresql.PostgreSQLConnectionBuilder;
 import org.springframework.context.annotation.Bean;
@@ -17,10 +17,10 @@ public class EventConfig {
                     "jdbc:postgresql://localhost:5432/RegForm");
         }
 
-    @Bean
-    UserRepository userRepository(){
-
-        return new UserJasyncRepository(connection());
-        }
+//    @Bean
+//    UserRepository userRepository(){
+//
+//        return new UserJasyncRepository(connection());
+//        }
 
 }

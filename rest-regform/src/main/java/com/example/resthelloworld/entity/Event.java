@@ -1,15 +1,25 @@
 package com.example.resthelloworld.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
 import java.util.Date;
 
-
+@Entity
+@Table(name="events")
 public class Event
 {
-    private long id = -1;
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
+    @Column(name="id", nullable = false)
+    private long id;
     private String Name;
     private Date eventDate;
     private boolean AgeAffilation;
     private String description;
+
 
     public Event(String name, boolean ageParameter, long date, String desc)
     {
@@ -21,22 +31,25 @@ public class Event
 
     }
 
-    public long getId() {
-        return id;
+    public Event() {
     }
+
+
 
     public String getName() {
         return Name;
     }
 
+    @Column(name = "name")
     public void setName(String name) {
-        Name = name;
+        this.Name = name;
     }
 
     public Date getEventDate() {
         return eventDate;
     }
 
+    @Column(name = "event_date")
     public void setEventDate(Date eventDate) {
         this.eventDate = eventDate;
     }
@@ -45,14 +58,16 @@ public class Event
         return AgeAffilation;
     }
 
+    @Column(name = "age_affilattion")
     public void setAgeAffilation(boolean ageAffilation) {
-        AgeAffilation = ageAffilation;
+        this.AgeAffilation = ageAffilation;
     }
 
     public String getDescription() {
         return description;
     }
 
+    @Column(name = "description")
     public void setDescription(String description) {
         this.description = description;
     }

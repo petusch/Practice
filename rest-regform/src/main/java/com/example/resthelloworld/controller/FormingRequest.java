@@ -18,8 +18,7 @@ public class FormingRequest {
             request = "select * from "+ table.trim().toLowerCase() + " where ";
         else if (operation.trim().equalsIgnoreCase("delete"))
             request = "delete from "+ table.trim().toLowerCase() + " where ";
-//        else if(operation.trim().equalsIgnoreCase("update"))
-//            request = "delete from "+ table.trim().toLowerCase() + " where ";
+
         if(id!=0) {
             request += "id=" + id;
             parametrsBefore = true;

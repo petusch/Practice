@@ -1,17 +1,12 @@
 package com.example.resthelloworld.entity;
 
-import lombok.Generated;
-import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
-import org.springframework.data.annotation.Id;
 
-import java.time.ZoneId;
 import java.util.Date;
 
 public class User {
-    private String Name ;
+    private String Name;
     private String Surname;
-    private @Id long id = -1;
     private Date UserCreation;
     private Date BirthDate;
     private String Email;
@@ -19,7 +14,6 @@ public class User {
     public User()
     {
         this.UserCreation = new Date();
-
     }
 
     public User(String name, String surname, String email, long birthdate) {
@@ -62,10 +56,6 @@ public class User {
 
     public void setSurname(String surname) {
         this.Surname = surname;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public Date getBirthDate() {

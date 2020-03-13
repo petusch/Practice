@@ -4,7 +4,7 @@
     class="form-control"
     name="username"
     [(ngModel)]="user.name"
-    require
+    
     minlength="4"
   />
 </div>
@@ -14,7 +14,7 @@
     class="form-control"
     name="surname"
     [(ngModel)]="user.surname"
-    require
+    
     minlength="4"
   />
 </div>
@@ -24,7 +24,7 @@
     class="form-control"
     name="email"
     [(ngModel)]="user.email"
-    require
+    
     minlength="4"
   />
 </div>
@@ -34,8 +34,9 @@
     class="form-control"
     name="password"
     [(ngModel)]="user.password"
-    require
+    
     minlength="4"
+    type="password"
   />
 </div>
 <mat-form-field>
@@ -44,7 +45,7 @@
     matInput
     [matDatepicker]="picker"
     name="birthdate"
-    require
+    
     [(ngModel)]="user.birthdate"
   />
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

@@ -5,7 +5,12 @@ import org.joda.time.LocalDateTime;
 import java.util.Date;
 
 public class User {
+
+
     private String Name;
+
+
+    private String password;
     private String Surname;
     private Date UserCreation;
     private Date BirthDate;
@@ -78,9 +83,17 @@ public class User {
         this.Email = email;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String toString()
     {
-        return "["+ Name + " | " + Surname + " | " + Email +"]" ;
+        return "["+ Name + " | " + Surname + " | " + Email + " | " + BirthDate + " | " + UserCreation +"]" ;
     }
 
 }

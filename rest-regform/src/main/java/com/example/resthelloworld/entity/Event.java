@@ -10,6 +10,7 @@ import java.util.Date;
 @Table(name="events")
 public class Event
 {
+
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name= "increment", strategy= "increment")
@@ -32,9 +33,12 @@ public class Event
     }
 
     public Event() {
+
     }
 
-
+    public long getId() {
+        return id;
+    }
 
     public String getName() {
         return Name;

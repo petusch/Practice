@@ -22,6 +22,7 @@ public class EventReader {
     @RequestMapping(value ={"/readEvents"},method = RequestMethod.POST)
     public List<Event> event()
     {
+
         return eventService.getAll();
     }
 

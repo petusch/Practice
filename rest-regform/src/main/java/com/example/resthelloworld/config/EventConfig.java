@@ -1,17 +1,20 @@
 package com.example.resthelloworld.config;
 
-import com.example.resthelloworld.entity.Event;
-import com.example.resthelloworld.repository.EventRepository;
+
 import com.github.jasync.sql.db.Connection;
 import com.github.jasync.sql.db.postgresql.PostgreSQLConnectionBuilder;
-import org.apache.catalina.filters.CorsFilter;
+
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 @Configuration
 public class EventConfig {
@@ -40,10 +43,11 @@ public class EventConfig {
         }
     }
 
-//    @Bean
-//    UserRepository userRepository(){
-//
-//        return new UserJasyncRepository(connection());
-//        }
+
+        @Bean
+        ServletWebServerFactory servletWebServerFactory(){
+            return new TomcatServletWebServerFactory();
+        }
+
 
 }

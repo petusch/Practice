@@ -29,16 +29,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<User> registerNewAccount(User tempUser) {
-
         if (emailExist(tempUser.getEmail())) {
-            System.out.println("Are you even working?");
-            return new ResponseEntity<User>(new User(),HttpStatus.EXPECTATION_FAILED);
+
+            return new ResponseEntity<>(new User(),HttpStatus.EXPECTATION_FAILED);
         }
-//        System.out.println(tempUser.toString());
-//        System.out.println(tempUser.getPassword());
+
         tempUser.setPassword(passwordEncoder.encode(tempUser.getPassword()));
-//        System.out.println(tempUser.getPassword());
         User user = tempUser;
+        System.out.println(tempUser.getUserCreation());
+        System.out.println(tempUser.getBirthDate());
         addUser(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
@@ -106,7 +105,6 @@ public class UserServiceImpl implements UserService {
 
         for (User u:
              list) {
-            System.out.println(u.getEmail()+"|||"+email);
             if(u.getEmail().trim().equalsIgnoreCase(email.trim()))
                 return true;
         }

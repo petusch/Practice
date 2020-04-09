@@ -20,7 +20,7 @@ public class UserUpdater {
     public User user(@RequestBody String request) {
         User user = new User("Oleg","Chernyshow", "email@gmail.com", 946684800000L);
 
-        //Update User in database
+
 
         return user;
     }

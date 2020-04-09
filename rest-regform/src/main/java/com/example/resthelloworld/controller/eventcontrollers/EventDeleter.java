@@ -1,6 +1,6 @@
 package com.example.resthelloworld.controller.eventcontrollers;
 
-import com.example.resthelloworld.entity.Event;
+
 import com.example.resthelloworld.services.EventService;
 import com.github.jasync.sql.db.Connection;
 import org.springframework.beans.factory.annotation.Autowired;

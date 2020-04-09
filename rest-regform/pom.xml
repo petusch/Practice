@@ -11,6 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>rest-helloworld</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>Rest Hello World</name>
     <description>Starting from the basics</description>
 
@@ -133,7 +134,7 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>4.2.14.RELEASE</version>
+            <version>4.2.4.RELEASE</version>
         </dependency>
 
         <dependency>

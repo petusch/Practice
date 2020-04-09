@@ -11,6 +11,7 @@ For deploy:
 !No validation so far, but email must be unique
 
 rest-regform - backend
+
 Jar already available at ..\Practice\rest-regform\target
 
 You can rebuilt it with "mvn clean package" from main direcory(..\Practice\rest-regform)

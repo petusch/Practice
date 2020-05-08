@@ -1,15 +1,12 @@
 package com.example.resthelloworld.entity;
-
 import org.joda.time.LocalDateTime;
-
 import java.util.Date;
+
 
 public class User {
 
 
     private String Name;
-
-
     private String password;
     private String Surname;
     private Date UserCreation;

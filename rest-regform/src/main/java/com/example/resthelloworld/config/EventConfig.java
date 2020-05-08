@@ -3,12 +3,10 @@ package com.example.resthelloworld.config;
 
 import com.github.jasync.sql.db.Connection;
 import com.github.jasync.sql.db.postgresql.PostgreSQLConnectionBuilder;
-
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
